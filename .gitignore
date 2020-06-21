@@ -1,4 +1,22 @@
 # ------------------------------------------------------------------------------
+# /etc
+#
+# Configurações utilizadas pela aplicação.
+
+# Ignora tudo dentro de `etc`, como tudo é útil, esse regra serve para lembrarmos
+# de atualizar o `README.md` e este arquivo com:
+#     - Necessidade de cada arquivo
+#     - Padrão e caminho dele debaixo do diretório de configuração
+./etc/*
+
+# Arquivos `*.php` na raiz definem a configuração de um "Ambiente".
+# O nome do arquivo é o nome do ambiente.
+!./etc/desenvolvimento.php
+
+# Arquivos para construir o "Banco de Dados", executados em ordem alfabética.
+!./etc/sql/*.sql
+
+# ------------------------------------------------------------------------------
 # /var
 #
 # Arquivos de log e banco de dados que são úteis para o ambiente de
