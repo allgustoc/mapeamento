@@ -1,0 +1,33 @@
+version: "3.8"
+
+services: 
+  www:
+    build:
+      context: ./etc/docker/php
+      dockerfile: Dockerfile
+    image: mapeamento:7.2-apache
+    environment:
+      APP_AMBIENTE: docker
+      APP_DATABASE_HOST: db
+      APP_DATABASE_USER: root
+      APP_DATABASE_PASSWORD: em_desenvolvimento
+      APP_DATABASE_NAME: maps_teste
+    volumes:
+      - .:/var/www/html
+    ports: 
+      - 8080:80
+  db:
+    image: mariadb:10.4
+    restart: always
+    environment: 
+      MYSQL_DATABASE: maps_teste
+      MYSQL_ROOT_PASSWORD: em_desenvolvimento
+    volumes: 
+      - ./etc/sql/:/docker-entrypoint-initdb.d
+  adminer:
+    image: adminer
+    restart: always
+    environment: 
+      ADMINER_DEFAULT_SERVER: db
+    ports: 
+      - 8081:8080

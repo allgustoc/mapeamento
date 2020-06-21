@@ -16,6 +16,8 @@
 # Arquivos para construir o "Banco de Dados", executados em ordem alfabética.
 !./etc/sql/*.sql
 
+# Conteúdo para imagem customizada para rodar a aplicação
+!./etc/docker/php/*
 # ------------------------------------------------------------------------------
 # /var
 #
