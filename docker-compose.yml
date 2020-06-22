@@ -12,6 +12,7 @@ services:
       APP_DATABASE_USER: root
       APP_DATABASE_PASSWORD: em_desenvolvimento
       APP_DATABASE_NAME: maps_teste
+      APP_MAPS_KEY:
     volumes:
       - .:/var/www/html
     ports: 
