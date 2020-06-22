@@ -1,0 +1,32 @@
+# ------------------------------------------------------------------------------
+# /etc
+#
+# Configurações utilizadas pela aplicação.
+
+# Ignora tudo dentro de `etc`, como tudo é útil, esse regra serve para lembrarmos
+# de atualizar o `README.md` e este arquivo com:
+#     - Necessidade de cada arquivo
+#     - Padrão e caminho dele debaixo do diretório de configuração
+./etc/*
+
+# Arquivos `*.php` na raiz definem a configuração de um "Ambiente".
+# O nome do arquivo é o nome do ambiente.
+!./etc/desenvolvimento.php
+
+# Arquivos para construir o "Banco de Dados", executados em ordem alfabética.
+!./etc/sql/*.sql
+
+# Conteúdo para imagem customizada para rodar a aplicação
+!./etc/docker/php/*
+# ------------------------------------------------------------------------------
+# /var
+#
+# Arquivos de log e banco de dados que são úteis para o ambiente de
+# desenvolvimento. O servidor NÃO deve utilizar este diretório, que é relativo
+# à raiz do repositório Git.
+
+# Não versionar nada dentro do diretório
+./var/*
+# Mantém o `README` versionado porque explica a necessidade e conteúdo do
+# diretório
+!./var/README.md
